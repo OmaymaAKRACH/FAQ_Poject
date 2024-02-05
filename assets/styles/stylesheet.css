@@ -1,0 +1,130 @@
+.wrap-layer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100vh;
+    margin-top: 0%;
+    margin-left: 0%; 
+    background-image: url(../images/background-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-position:top;
+    background-size:contain;
+    background-color: hsl(275, 100%, 97%);
+    font-size: 16px;
+   
+}
+
+.content-layer{
+    flex-wrap:wrap;
+    flex-direction: row;
+    width: 40%;
+    height: fit-content;
+    padding: 30px;
+    margin:auto;
+    background-color:  hsl(0, 0%, 100%);
+    border-radius: 4px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    font-family: 'Work Sans', sans-serif;
+    color: hsl(292, 42%, 14%);
+    
+        
+}
+.title-componant{
+    display: flex;
+    flex-direction: row;
+ 
+}
+.star-icon{
+    padding-top: 20px;
+    margin-right: 10px;
+}
+.QA-componant{
+    font-size: 1rem;
+}
+/* Add a bar between questions */
+.QA-componant:not(:last-child) {
+    border-bottom: 1px solid hsl(275, 100%, 97%); /* Adjust the color as needed */
+    
+}
+
+.question-componant{
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+    padding-right:3rem ;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    font-size: 1rem;
+    font-weight: 600;  
+}
+.question-componant:hover{
+    color: #AD28EB;
+}
+
+/* Initially hide .svgMinus */
+.svgMinus {
+    display: none;
+}
+
+/* Show .svgMinus when its parent .question-componant is active */
+.question-componant.active .svgMinus {
+    display: inline-block; 
+}
+
+/* Hide .svgPlus when its parent .question-componant is active */
+.question-componant.active .svgPlus {
+    display: none;
+}
+
+.svgMinus, .svgPlus{
+    position: absolute;
+    top: 50%;
+    right: 0;
+    transform: translateY(-50%);
+    cursor: pointer;
+    max-width: 150%;
+    max-height: 150%;
+}
+.answer-componant{
+    display: none;
+    margin-top: 15px;
+    margin-bottom:15px;
+    font-size: 1rem;
+    color: hsl(292, 16%, 49%);
+
+}
+
+.attribution {
+    font-size: 11px; text-align: center; margin-top: 30px; 
+}
+.attribution a { 
+    color: hsl(228, 45%, 44%); 
+}
+
+/* Mobile Styles */
+@media only screen and (max-width: 375px) {
+    
+    .wrap-layer {
+        background-image: url(../images/background-pattern-mobile.svg);
+    }
+
+    .content-layer {
+        width: 80%;
+        margin: 7%;
+    }
+
+    .question-componant {
+        font-size: 90%;
+    }
+
+    .svgMinus, .svgPlus {
+        right: 0;
+        top: 50%;
+    }
+
+    .answer-componant {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+}
